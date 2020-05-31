@@ -14,8 +14,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $dashboard = Dashboard::all();
-        return view('admin.dashboard', ['dashboard' => $dashboard]);
+        //
     }
 
     /**
