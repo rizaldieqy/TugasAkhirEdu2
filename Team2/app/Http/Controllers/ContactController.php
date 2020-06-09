@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Contact;
+use App\Models\Users\Contact;
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth')->only([
+            'index','show','edit','update','destroy'
+        ]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        // 
     }
 
     /**
@@ -24,7 +30,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.contact.contact-us');
     }
 
     /**
@@ -33,9 +39,11 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
-        //
+        $data = $request->all();
+        Contact::create($data);
+        return redirect('/contact');
     }
 
     /**
