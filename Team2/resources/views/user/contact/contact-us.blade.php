@@ -55,7 +55,28 @@
                </div>
             </form>
         </div>
-        <div class="col-md-4"></div>
+        <div class="col-md-4 p-5 mt-3">
+            @foreach($contact as $c)
+            <div class="media mb-3">
+                <i class="fa fa-address-book mt-1 mr-2"></i>
+                <div class="media-body">
+                    {{ $c->alamat }}
+                </div>
+              </div>
+              <div class="media mb-3">
+                <i class="fa fa-phone mt-1 mr-2"></i>
+                <div class="media-body">
+                    {{ $c->no_hp }}
+                </div>
+              </div>
+              <div class="media">
+                <i class="fa fa-paper-plane mt-1 mr-2"></i>
+                <div class="media-body">
+                    {{ $c->email }}
+                </div>
+              </div>
+            @endforeach
+        </div>
     </div>
 </div>
 

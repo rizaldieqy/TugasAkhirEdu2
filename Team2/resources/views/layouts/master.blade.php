@@ -17,7 +17,7 @@
 
 
 
-  {{-- @include('includes.users.footer') --}}
+  @include('includes.users.footer',['ct' => 'App\Http\Models\Contact'])
 
 
 

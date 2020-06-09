@@ -21,7 +21,8 @@ Auth::routes();
 
 // Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/test','ContactController@index');
+
+Route::get('/mcontact','ContactController@index');
 Route::get('/contact','ContactController@create');
 Route::post('/contact','ContactController@store');
 

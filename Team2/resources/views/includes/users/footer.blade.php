@@ -10,7 +10,17 @@
           <h3>Adress</h3><br>
           
           {{-- (Kolom untuk isi alamat) --}}
-  
+          <div class="row">
+              <div class="col-md-8">
+            @foreach ($contact as $item)
+              <p>{{ $item->alamat }}</p>
+              <p>{{ $item->no_hp }}</p>
+              {{-- <p>{{ $item }}</p> --}}
+            @endforeach
+          </div>
+        </div>
+
+
         </div>
         <div class="col-sm-3" style="color: white">
           <br><br>

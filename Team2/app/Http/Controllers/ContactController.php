@@ -8,10 +8,13 @@ use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
-    public function __construct(){
+    public function __construct(Contact $contact){
         $this->middleware('auth')->only([
-            'index','show','edit','update','destroy'
+            'show','edit','update','destroy'
         ]);
+
+        $contact->get();
+        return view('includes.users.footer',compact('contact'));
     }
     /**
      * Display a listing of the resource.
