@@ -1,5 +1,5 @@
 @extends('layouts.masteradmin')
-@section('title','form admin produk')
+@section('title','Create produk')
 @section('Produk','active')
 @section('contentadmin')
 <div class="container">
