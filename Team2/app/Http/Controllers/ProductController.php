@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Product;
-use App\Gallery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -15,8 +15,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $produk = Product::all();
-        return view('admin.product_admin.index',compact('produk'));
+        $items = Product::all();
+        return view('pages.product_admin.index',compact('items'));
     }
 
     /**
@@ -26,7 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.product_admin.create');
     }
 
     /**
@@ -35,9 +35,13 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        //
+        $data = $request->all();
+        $data['slug'] = Str::slug($request->title);
+
+        Product::create($data);
+        return redirect()->route('produk.index');
     }
 
     /**
@@ -57,9 +61,13 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        //
+        $item = Product::findOrFail($id);
+
+        return view('pages.product_admin.edit',[
+            'item' => $item
+        ]);
     }
 
     /**
@@ -69,9 +77,16 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(ProductRequest $request, $id)
     {
-        //
+        $data = $request->all();
+        $data['slug'] = Str::slug($request->title);
+
+        $item = TravelPackage::findOrFail($id);
+
+        $item->update($data);
+
+        return redirect()->route('pages.product_admin.index');
     }
 
     /**
@@ -82,6 +97,9 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $item = Product::findorFail($id);
+        $item->delete();
+
+        return redirect()->route('pages.product_admin.index');
     }
 }

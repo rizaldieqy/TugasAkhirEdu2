@@ -17,7 +17,8 @@ class CreateGalleriesTable extends Migration
             $table->id();
             $table->bigInteger('produk_id')->unsigned();
             $table->string('nama_gambar');
-            $table->string('gambar');
+            $table->text('gambar');
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('produk_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
