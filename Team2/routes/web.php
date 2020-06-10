@@ -22,8 +22,16 @@ Auth::routes();
 // Route::get('/', 'HomeController@index')->name('home');
 
 
-Route::get('/mcontact','ContactController@index');
+// Contact Us 
+
+// Users Route
 Route::get('/contact','ContactController@create');
 Route::post('/contact','ContactController@store');
 
+// UsersAdminRoute 
+Route::prefix('/admin')->group(function(){
+    Route::get('/contact','ContactController@index');
+    Route::get('/contact/{id}','ContactController@show');
+    Route::resource('alamat','AlamatController');
+});
 

@@ -10,7 +10,7 @@ class ContactController extends Controller
 {
     public function __construct(Contact $contact){
         $this->middleware('auth')->only([
-            'show','edit','update','destroy'
+            'index','show','edit','update','destroy'
         ]);
 
         $contact->get();
@@ -57,7 +57,7 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        //
+        // 
     }
 
     /**
