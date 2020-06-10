@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GalleryRequest;
 use App\Gallery;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class GalleryController extends Controller
 {
@@ -15,7 +17,11 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        //
+        $items = Gallery::with(['Product'])->get();
+
+        return view('pages.admin.gallery.index',[
+            'items' => $items,
+        ]);
     }
 
     /**
@@ -25,7 +31,10 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        //
+        $product = Product::all();
+        return view('pages.admin.gallery.create',[
+            'product' => $product
+        ]);
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductRequest;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -16,7 +17,7 @@ class ProductController extends Controller
     public function index()
     {
         $items = Product::all();
-        return view('pages.product_admin.index',compact('items'));
+        return view('pages.admin.product.index',compact('items'));
     }
 
     /**
@@ -26,7 +27,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('pages.product_admin.create');
+        return view('pages.admin.product.create');
     }
 
     /**
@@ -65,7 +66,7 @@ class ProductController extends Controller
     {
         $item = Product::findOrFail($id);
 
-        return view('pages.product_admin.edit',[
+        return view('pages.admin.product.edit',[
             'item' => $item
         ]);
     }
@@ -86,7 +87,7 @@ class ProductController extends Controller
 
         $item->update($data);
 
-        return redirect()->route('pages.product_admin.index');
+        return redirect()->route('pages.admin.product.index');
     }
 
     /**
@@ -100,6 +101,6 @@ class ProductController extends Controller
         $item = Product::findorFail($id);
         $item->delete();
 
-        return redirect()->route('pages.product_admin.index');
+        return redirect()->route('pages.admin.product.index');
     }
 }
