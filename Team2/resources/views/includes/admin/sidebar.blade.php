@@ -36,6 +36,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="/gallery" class="nav-link @yield('Gallery')">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Gallery</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="./index.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pesan</p>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
-use App\Product;
+use App\Models\Users\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -39,10 +39,12 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
         $data = $request->all();
-        $data['slug'] = Str::slug($request->title);
+
+        // slug adalah untuk membaca penganti id mempercantik url
+        $data['slug'] = Str::slug($request->nama_produk);
 
         Product::create($data);
-        return redirect()->route('produk.index');
+        return redirect()->route('product.index');
     }
 
     /**
@@ -83,11 +85,11 @@ class ProductController extends Controller
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
 
-        $item = TravelPackage::findOrFail($id);
+        $item = Product::findOrFail($id);
 
         $item->update($data);
 
-        return redirect()->route('pages.admin.product.index');
+        return redirect()->route('product.index');
     }
 
     /**
@@ -96,11 +98,11 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
         $item = Product::findorFail($id);
         $item->delete();
 
-        return redirect()->route('pages.admin.product.index');
+        return redirect()->route('product.index');
     }
 }

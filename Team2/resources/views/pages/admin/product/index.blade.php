@@ -21,6 +21,7 @@
                               <th>Nama Produk</th>
                               <th>Deskripsi</th>
                               <th>Type</th>
+                              <th>Option</th>
                           </tr>
                           </thead>
                           <tbody>
