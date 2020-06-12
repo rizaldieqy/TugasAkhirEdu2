@@ -27,8 +27,6 @@ Route::get('/utamas', 'UtamaController@index')->middleware('auth')->name('utamas
 
 Route::get('/utamas/create', 'UtamaController@create')->middleware('auth')->name('utamas.create');
 
-// Route::get('/statuses/{status}', 'StatusController@show')->name('statuses.show');
-
 Route::get('/utamas/{utama}/edit', 'UtamaController@edit')->middleware('auth')->name('utamas.edit');
 
 Route::patch('/utamas/{utama}', 'UtamaController@update')->middleware('auth')->name('utamas.update');

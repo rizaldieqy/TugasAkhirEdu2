@@ -6,13 +6,8 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end m-4 pr-5" id="navbarNavAltMarkup">
           <ul class="navbar-nav">
-<<<<<<< HEAD
-            <li class="nav-item">
-              <a class="nav-link" style="color: white" href="{{ route('utamahomes.index') }}">Home</a>
-=======
             <li class="nav-item mr-5">
               <a class="nav-link" style="color: white" href="#">Home</a>
->>>>>>> wehmamxx
             </li>
             <li class="nav-item mr-5">
               <a class="nav-link" style="color: white" href="#">Product</a>
