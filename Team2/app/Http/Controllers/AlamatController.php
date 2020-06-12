@@ -8,7 +8,7 @@ use App\Models\Users\Alamat;
 class AlamatController extends Controller
 {
     public function index(){
-        return view('admin.contact.contact-index',['alamat'=> Alamat::all()]);
+        // return view('    ',['alamat'=> Alamat::all()]);
     }
     public function create(){
 

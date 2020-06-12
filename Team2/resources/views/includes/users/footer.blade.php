@@ -15,7 +15,6 @@
             @foreach ($contact as $item)
               <p>{{ $item->alamat }}</p>
               <p>{{ $item->no_hp }}</p>
-              {{-- <p>{{ $item }}</p> --}}
             @endforeach
           </div>
         </div>
