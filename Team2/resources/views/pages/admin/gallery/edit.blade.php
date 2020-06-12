@@ -1,6 +1,7 @@
-@extends('layouts.admin')
-
-@section('content')
+@extends('layouts.masteradmin')
+@section('title','Edit Gallery')
+@section('Gallery','active')
+@section('contentadmin')
     <!-- Begin Page Content -->
     <div class="container-fluid">
 
@@ -25,19 +26,26 @@
                     @method('PUT')
                     @csrf
                     <div class="form-group">
-                        <label for="title">Paket Travel</label>
-                        <select name="travel_packages_id" required class="form-control">
-                            <option value="{{ $item->travel_packages_id }}">Jangan Ubah</option>
-                            @foreach($travel_packages as $travel_package)
-                                <option value="{{ $travel_package->id }}">
-                                    {{ $travel_package->title }}
+                        <label for="nama_produk">Produk</label>
+                        <select name="produk_id" required class="form-control">
+                            {{-- <option value="{{ $item->produk_id }}">Jangan Ubah</option> --}}
+                            @foreach($product as $product)
+                                <option value="{{ $product->id }}" {{old('produk_id') ?? $item->produk_id == $product->id ? 'selected' : ''}}>
+                                    {{ $product->nama_produk }}
                                 </option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="image">Image</label>
-                        <input type="file" class="form-control" name="image" placeholder="Image" >
+                        <label for="nama_gambar">Nama Gambar</label>
+                        <input type="text" class="form-control" @error('nama_gambar') is-invalid @enderror id="nama_gambar" name="nama_gambar" value="{{$item->nama_gambar}}">
+                        @error('nama_gambar')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="gambar">Gambar</label>
+                        <input type="file" class="form-control" name="gambar" placeholder="Gambar" >
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">
                         Ubah

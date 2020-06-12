@@ -22,6 +22,7 @@
                       <tr>
                           <th>No</th>
                           <th>Produk</th>
+                          <th>Nama Gambar</th>
                           <th>Gambar</th>
                           <th>Action</th>
                       </tr>
@@ -30,8 +31,8 @@
                       @forelse($items as $item)
                           <tr>
                               <td>{{ $loop->iteration }}</td>
-                              <td>{{ $item->id }}</td>
-                              <td>{{ $item->product->nama_produk }}</td>
+                              <td>{{ $item->data->nama_produk }}</td>
+                              <td>{{ $item->nama_gambar }}</td>
                               <td>
                                   <img src="{{ Storage::url($item->gambar) }}" alt="" style="width: 200px" class="img-thumbnail">
                               </td>

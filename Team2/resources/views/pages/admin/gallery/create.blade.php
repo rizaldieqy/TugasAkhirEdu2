@@ -25,19 +25,26 @@
                 <form action="{{ route('gallery.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label for="title">Paket Travel</label>
-                        <select name="product_id" required class="form-control">
-                            <option value="">Pilih Produk</option>
+                        <label for="produk_id">Produk</label>
+                        <select name="produk_id" required class="form-control">
+                            {{-- <option value="">Pilih Produk</option> --}}
                             @foreach($product as $item)
-                                <option value="{{ $item->id }}">
+                                <option value="{{ $item->id }}" {{old('produk_id') == "$item->nama_produk" ? 'selected' : ''}}>
                                     {{ $item->nama_produk }}
                                 </option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="image">Image</label>
-                        <input type="file" class="form-control" name="image" placeholder="Image" >
+                        <label for="nama_gambar">Nama Gambar</label>
+                        <input type="text" class="form-control" @error('nama_gambar') is-invalid @enderror id="nama_gambar" name="nama_gambar" value="{{old('nama_gambar')}}">
+                        @error('nama_gambar')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="gambar">Image</label>
+                        <input type="file" class="form-control" name="gambar" placeholder="Gambar" >
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">
                         Simpan

@@ -24,9 +24,9 @@ class GalleryRequest extends FormRequest
     public function rules()
     {
         return [
-            'produk_id' => 'required|integer|exists:products,id',
+            'produk_id' => 'required|exists:products,id',
             'gambar' => 'required|image',
-            'nama_gambar' => 'required|min:3',
+            // 'nama_gambar' => 'required|min:2',
         ];
     }
 }

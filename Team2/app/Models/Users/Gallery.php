@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Gallery extends Model
 {
     use SoftDeletes;
-    protected $guarded = [];
+    protected $fillable = ['id','produk_id','nama_gambar','gambar'];
     
-    public function product(){
-        return $this->belongsTo( Product::class, 'product_id', 'id' );
+    public function data(){
+        return $this->belongsTo(Product::class,'produk_id','id');
     }
 }
