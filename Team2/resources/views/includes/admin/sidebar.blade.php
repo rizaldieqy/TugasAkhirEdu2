@@ -30,7 +30,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Product</p>
                 </a>
@@ -55,7 +55,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="{{ url('admin/contact') }}" class="nav-link @yield('product')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Contact</p>
                 </a>

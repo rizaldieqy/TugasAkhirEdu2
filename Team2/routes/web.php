@@ -36,3 +36,16 @@ Route::patch('/utamas/{utama}', 'UtamaController@update')->middleware('auth')->n
 Route::delete('/utamas/{utama}', 'UtamaController@destroy')->middleware('auth')->name('utamas.destroy');
 
 Route::post('/utamas', 'UtamaController@store')->middleware('auth')->name('utama.store');
+// Contact Us 
+
+// Users Route
+Route::get('/contact','ContactController@create');
+Route::post('/contact','ContactController@store');
+
+// UsersAdminRoute 
+Route::prefix('/admin')->group(function(){
+    Route::get('/contact','ContactController@index');
+    Route::get('/contact/{id}','ContactController@show');
+    Route::resource('alamat','AlamatController');
+});
+

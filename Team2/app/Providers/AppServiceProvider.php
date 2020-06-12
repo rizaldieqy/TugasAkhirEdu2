@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Models\Users\Alamat;
+use View;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +26,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $contact = Alamat::all();
+        View::composer(['includes.users.footer','user.contact.contact-us'],function($data)
+        use($contact)
+        {
+            $data->with('contact',$contact);
+        });
     }
 }

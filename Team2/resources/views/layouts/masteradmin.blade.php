@@ -107,7 +107,11 @@
 <!-- ChartJS -->
 <script src="{{ asset('AdminLTE/plugins/chart.js/Chart.min.js') }}"></script>
 <!-- Sparkline -->
+<<<<<<< HEAD
 <script src="{{ asset('AdminLTE/plugins/sparklines/sparkline.js') }}"></script>
+=======
+<script src="{{ asset('AdminLTE') }}plugins/sparklines/sparkline.js"></script>
+>>>>>>> wehmamxx
 <!-- JQVMap -->
 <script src="{{ asset('AdminLTE/plugins/jqvmap/jquery.vmap.min.js') }}"></script>
 <script src="{{ asset('AdminLTE/plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
