@@ -6,6 +6,11 @@
     <section class="content">
         <div class="container">
             <div class="row">
+                <div class="col-md-12 mt-3 mb-2">
+                    <h3>Daftar Pesan Contact</h3>
+                </div>
+            </div>
+            <div class="row mt-3">
                 <div class="col-md-12">
                     <table class="table table-striped">
                         <thead>
