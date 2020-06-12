@@ -14,7 +14,8 @@ class UtamaController extends Controller
      */
     public function index()
     {
-        //
+        $utama = Utama::all();
+        return view('admin.tk.tentangkami', ['utama' => $utama]);
     }
 
     /**
@@ -24,7 +25,7 @@ class UtamaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tk.createtentang');
     }
 
     /**
@@ -35,7 +36,17 @@ class UtamaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'title' => 'required',
+            'subtitle' => 'required',
+            'size_font_title' => 'required',
+            'size_font_subtitle' => 'required',
+            'visi' => 'required',
+            'misi' => 'required',
+            ]);
+            $utama = Utama::create($validateData);
+            session()->flash('pesan', "Data {$utama->title} Berhasil Ditambahkan");
+            return redirect('/utamas');
     }
 
     /**
@@ -57,7 +68,7 @@ class UtamaController extends Controller
      */
     public function edit(Utama $utama)
     {
-        //
+        return view('admin.tk.edittentang', ['utama' => $utama]);
     }
 
     /**
@@ -69,7 +80,17 @@ class UtamaController extends Controller
      */
     public function update(Request $request, Utama $utama)
     {
-        //
+        $validateData = $request->validate([
+            'title' => 'required',
+            'subtitle' => 'required',
+            'size_font_title' => 'required',
+            'size_font_subtitle' => 'required',
+            'visi' => 'required',
+            'misi' => 'required',
+        ]);
+        $utama->update($validateData);
+        session()->flash('pesan', "Data {$utama->title} Berhasil Di Edit");
+        return redirect()->route("utamas.index");
     }
 
     /**
@@ -80,6 +101,8 @@ class UtamaController extends Controller
      */
     public function destroy(Utama $utama)
     {
-        //
+        $utama->find($utama->id)->delete();
+        session()->flash('pesan', "Data {$utama->title} Berhasil Dihapus");
+        return redirect()->route('utamas.index');
     }
 }

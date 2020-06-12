@@ -6,7 +6,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" style="color: white" href="#">Home</a>
+              <a class="nav-link" style="color: white" href="{{ route('utamahomes.index') }}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" style="color: white" href="#">Product</a>

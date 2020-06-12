@@ -15,6 +15,12 @@ class CreateUtamasTable extends Migration
     {
         Schema::create('utamas', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('subtitle');
+            $table->integer('size_font_title');
+            $table->integer('size_font_subtitle');
+            $table->text('visi')->nullable();
+            $table->text('misi')->nullable();
             $table->timestamps();
         });
     }

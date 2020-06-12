@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Utama extends Model
+class UtamaFront extends Model
 {
     protected $guarded = [];
 }
