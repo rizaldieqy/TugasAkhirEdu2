@@ -26,11 +26,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // $contact = Alamat::all();
-        // View::composer(['includes.users.footer','user.contact.contact-us'],function($data)
-        // use($contact)
-        // {
-        //     $data->with('contact',$contact);
-        // });
+        $contact = Alamat::all();
+        View::composer(['includes.users.footer','user.contact.contact-us'],function($data)
+        use($contact)
+        {
+            $data->with('contact',$contact);
+        });
     }
 }
