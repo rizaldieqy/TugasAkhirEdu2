@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="row mt-4">
-        <div class="col-md-8 mt-3">
+        <div class="col-md-7 mt-3">
             <h2 class="text-bold mb-3"><b>Hubungi Kami</b></h2>
             <form action="{{ url('/contact') }}" method="POST">
                 @csrf
@@ -55,7 +55,7 @@
                </div>
             </form>
         </div>
-        <div class="col-md-4 p-5 mt-3">
+        <div class="col-md-5 p-5 mt-3">
             @foreach($contact as $c)
             <div class="media mb-3">
                 <i class="fa fa-address-book mt-1 mr-2"></i>

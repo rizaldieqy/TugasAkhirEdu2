@@ -1,5 +1,5 @@
 @extends('layouts.masteradmin')
-@section('product','active')
+@section('alamat','active')
 @section('contentadmin')
 
 <div class="content-wrapper">
@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 mt-3 mb-2">
-                    <h3>Daftar Pesan Contact</h3>
+                    <h3>Data Alamat Contact Us Dan Footer</h3>
                 </div>
             </div>
             <div class="row mt-3">
@@ -15,21 +15,19 @@
                     <table class="table table-striped">
                         <thead>
                             <th>#</th>
-                            <th>Nama</th>
+                            <th>alamat</th>
                             <th>Email</th>
-                            <th>Pesan</th>
                             <th>No Handphone</th>    
-                            <th>Create </th>
+                            {{-- <th>Pesan</th> --}}
+                            {{-- <th>Create </th> --}}
                         </thead>    
                         <tbody>
-                            @foreach($contact as $contacts)
+                            @foreach($alamats as $alamat)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $contacts->nama }}</td>
-                                <td>{{ $contacts->email }}</td>
-                                <td>{{ $contacts->pesan }}</td>
-                                <td>{{ $contacts->no_hp }}</td>
-                                <td>{{$contacts->created_at}}</td>
+                                <td>{{ $alamat->alamat }}</td>
+                                <td>{{ $alamat->email }}</td>
+                                <td>{{ $alamat->no_hp }}</td>
                             </tr>
                             @endforeach
                         </tbody>
