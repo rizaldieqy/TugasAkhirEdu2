@@ -19,7 +19,7 @@
             <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
                 <div class="port-hover-text text-center">
                     <h4>Abp Corp. Branding</h4>
-                    <a href="/gallery">Brand Identity</a>
+                    <a href="{{ route('detail', $gallery->data->slug) }}">Brand Identity</a>
                 </div>
             </div>
         </div>

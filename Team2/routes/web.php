@@ -26,6 +26,7 @@ Route::prefix('admin')->group(function(){
 });
 Route::get('/product','view_productController@index')->name('product');
 Route::get('/gallery','view_galleryController@index')->name('gallery');
+Route::get('/detail/{slug}','detailController@index')->name('detail');
 
 
 

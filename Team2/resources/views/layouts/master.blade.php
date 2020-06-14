@@ -7,7 +7,7 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset ('css/style.css') }}">
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    {{-- <script src='https://kit.fontawesome.com/a076d05399.js'></script> --}}
 </head>
 <body>
    @include('includes.users.header')
