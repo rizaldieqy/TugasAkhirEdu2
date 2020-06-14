@@ -17,11 +17,15 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-// Auth::routes();
+Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::resource('product','ProductController');
-Route::resource('gallery','GalleryController');
+Route::prefix('admin')->group(function(){
+    Route::resource('product','ProductController');
+    Route::resource('gallery','GalleryController');
+});
+Route::get('/product','view_productController@index')->name('product');
+Route::get('/gallery','view_galleryController@index')->name('gallery');
 
 
 

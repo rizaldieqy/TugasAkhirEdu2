@@ -6,10 +6,10 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" style="color: white" href="#">Home</a>
+              <a class="nav-link" style="color: white" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color: white" href="#">Product</a>
+              <a class="nav-link @yield('Product')" style="color: white" href="/product">Product</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" style="color: white" href="#">Client</a>

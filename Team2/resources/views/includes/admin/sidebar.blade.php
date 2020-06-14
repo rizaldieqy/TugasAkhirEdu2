@@ -30,13 +30,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/product" class="nav-link @yield('Produk')">
+                <a href="/admin/product" class="nav-link @yield('Produk')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Product</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/gallery" class="nav-link @yield('Gallery')">
+                <a href="/admin/gallery" class="nav-link @yield('Gallery')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Gallery</p>
                 </a>
