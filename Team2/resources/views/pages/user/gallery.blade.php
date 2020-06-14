@@ -13,7 +13,7 @@
 </section>
 <div class="row">
     @foreach ($items as $gallery)        
-    <div class="col-md-4">
+    <div class="col-md-4" style="padding: 0px;">
         <div class="single_gallery_item">
             <img src="{{ Storage::url($gallery->gambar) }}" class="img-fluid" style="height: 400px;">
             <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">

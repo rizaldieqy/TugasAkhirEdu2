@@ -7,7 +7,7 @@ body {
     display: inline-block;
     z-index: 3;
     position: relative;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .single_gallery_item>img {
