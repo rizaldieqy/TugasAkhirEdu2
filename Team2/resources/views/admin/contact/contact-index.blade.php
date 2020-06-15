@@ -10,6 +10,15 @@
                     <h3>Daftar Pesan Contact</h3>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-6">
+                    @if(session('hapus'))
+                        <div class="alert alert-danger">
+                            {{ session('hapus') }}
+                        </div>
+                    @endif
+                </div>
+            </div>
             <div class="row mt-3">
                 <div class="col-md-12">
                     <table class="table table-striped">
@@ -20,6 +29,7 @@
                             <th>Pesan</th>
                             <th>No Handphone</th>    
                             <th>Create </th>
+                            <th>Action</th>
                         </thead>    
                         <tbody>
                             @foreach($contact as $contacts)
@@ -30,6 +40,13 @@
                                 <td>{{ $contacts->pesan }}</td>
                                 <td>{{ $contacts->no_hp }}</td>
                                 <td>{{$contacts->created_at}}</td>
+                                <td>
+                                <form action="{{ url('/admin/contact',$contacts->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="badge badge-danger">Hapus</button>
+                                    </form>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

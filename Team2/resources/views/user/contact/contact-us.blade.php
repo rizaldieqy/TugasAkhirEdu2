@@ -7,6 +7,9 @@
         <div class="row mt-5">
             <div class="col-md-12 mt-5"> 
                 <h1 class="mt-5 text-center text-white p-5"><b class="">CONTACT US</b></h1>
+                {{-- @if(session('status'))
+                    <div class="alert alert-success">{{ session('status') }}</div>
+                @endif --}}
             </div>
         </div>
     </div>
@@ -15,7 +18,9 @@
 <div class="container mt-5 mb-5">
     <div class="row mt-5">
         <div class="col-md-12 mt-5 text-center">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2905087016775!2d106.69964991532393!3d-6.225374562704177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fb292eae50e7%3A0x5ea57e64ea9ad85d!2sEDU-TECH.ID!5e0!3m2!1sid!2sid!4v1591713554551!5m2!1sid!2sid" width="100%" height="650" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            @foreach($contact as $c)
+                <iframe src="https://www.google.com/maps/embed?pb={{ $c->location }}" width="100%" height="650" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            @endforeach
         </div>
     </div>
     <div class="row mt-4">

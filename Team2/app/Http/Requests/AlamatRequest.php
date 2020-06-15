@@ -26,7 +26,7 @@ class AlamatRequest extends FormRequest
         return [
             'alamat' => 'required',
             'email' => 'required|email',
-            'no_hp' => 'required|numeric|digits:12'
+            'no_hp' => 'required|numeric|digits:11'
         ];
     }
 }

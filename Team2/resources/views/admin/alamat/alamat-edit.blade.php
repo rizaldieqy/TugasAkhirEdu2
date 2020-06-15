@@ -37,6 +37,13 @@
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            {{-- <input type="text" name="location" id="location" class="form-control @error('location') is-invalid @enderror" value="{{ old('location') ?? $alamat->location }}"> --}}
+                            <textarea name="location" id="location" cols="30" rows="5" class="form-control" disabled>{{ $alamat->location }}</textarea>
+                            
+                        </div>
                         <button class="btn btn-primary" type="submit">Simpan</button>
                     </form>
                 </div>

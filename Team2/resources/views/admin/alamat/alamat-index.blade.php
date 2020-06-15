@@ -18,7 +18,7 @@
                             <th>alamat</th>
                             <th>Email</th>
                             <th>No Handphone</th>    
-                            {{-- <th>Pesan</th> --}}
+                            <th>Action</th>
                             {{-- <th>Create </th> --}}
                         </thead>    
                         <tbody>
@@ -28,6 +28,7 @@
                                 <td>{{ $alamat->alamat }}</td>
                                 <td>{{ $alamat->email }}</td>
                                 <td>{{ $alamat->no_hp }}</td>
+                                <td><a href="{{ route('alamat.edit',$alamat->id,'edit') }}" class="badge badge-success">Edit</a></td>
                             </tr>
                             @endforeach
                         </tbody>

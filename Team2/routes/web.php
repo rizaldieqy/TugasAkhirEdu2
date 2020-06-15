@@ -32,6 +32,7 @@ Route::post('/contact','ContactController@store');
 Route::prefix('/admin')->group(function(){
     Route::get('/contact','ContactController@index');
     Route::get('/contact/{id}','ContactController@show');
+    Route::delete('/contact/{id}','ContactController@destroy')->name('destroy');
     Route::resource('alamat','AlamatController');
 });
 

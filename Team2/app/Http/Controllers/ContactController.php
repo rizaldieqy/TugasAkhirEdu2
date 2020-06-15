@@ -8,13 +8,10 @@ use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
-    public function __construct(Contact $contact){
+    public function __construct(){
         $this->middleware('auth')->only([
             'index','show','edit','update','destroy'
         ]);
-
-        $contact->get();
-        return view('includes.users.footer',compact('contact'));
     }
     /**
      * Display a listing of the resource.
@@ -46,6 +43,7 @@ class ContactController extends Controller
     {
         $data = $request->all();
         Contact::create($data);
+        alert()->info('Title','Lorem Lorem Lorem');
         return redirect('/contact');
     }
 
@@ -57,7 +55,7 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        // 
+        //  
     }
 
     /**
@@ -89,8 +87,9 @@ class ContactController extends Controller
      * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact)
+    public function destroy($id)
     {
-        //
+        Contact::destroy($id);
+        return redirect('/admin/contact')->with('hapus','Data Berhasil Dihapus!');
     }
 }
