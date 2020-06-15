@@ -19,7 +19,7 @@
                 <img src="{{ Storage::url($produk->galleries->first()->gambar) }}" class="img-fluid" style="height: 400px;">
                 <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
                     <div class="port-hover-text text-center">
-                        <h4>Abp Corp. Branding</h4>
+                        <h4>{{ $produk->nama_produk }}</h4>
                         <a href="{{ route('detail', $produk->slug) }}">Brand Identity</a>
                     </div>
                 </div>
