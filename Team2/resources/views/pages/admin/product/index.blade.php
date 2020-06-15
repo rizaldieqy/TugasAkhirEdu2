@@ -8,8 +8,13 @@
               <a href="{{ route('product.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                   <i class="fas fa-plus fa-sm text-white-50"></i> Tambah Produk
               </a>
-          </div>
-    
+        </div>
+        @if(session()->has('pesan'))
+            <div class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            {{ session()->get('pesan') }}
+            </div>
+        @endif
           <!-- Content Row -->
           <div class="row">
               <div class="card-body">

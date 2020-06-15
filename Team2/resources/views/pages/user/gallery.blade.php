@@ -15,11 +15,11 @@
     @foreach ($items as $gallery)        
     <div class="col-md-4" style="padding: 0px;">
         <div class="single_gallery_item">
-            <img src="{{ Storage::url($gallery->gambar) }}" class="img-fluid" style="height: 400px;">
+            <img src="{{ Storage::url($gallery->galleries->first()->gambar) }}" class="img-fluid" style="height: 400px;">
             <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
                 <div class="port-hover-text text-center">
-                    <h4>{{ $gallery->data->nama_produk }}</h4>
-                    <a href="{{ route('detail', $gallery->data->slug) }}">Brand Identity</a>
+                    <h4>{{ $gallery->nama_produk }}</h4>
+                    <a href="{{ route('detail', $gallery->slug) }}">Brand Identity</a>
                 </div>
             </div>
         </div>

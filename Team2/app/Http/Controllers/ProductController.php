@@ -44,6 +44,7 @@ class ProductController extends Controller
         $data['slug'] = Str::slug($request->nama_produk);
 
         Product::create($data);
+        session()->flash('pesan',"Data {$data['nama_produk']} Berhasil Di Simpan!");
         return redirect()->route('product.index');
     }
 
@@ -88,7 +89,7 @@ class ProductController extends Controller
         $item = Product::findOrFail($id);
 
         $item->update($data);
-
+        session()->flash('pesan',"Data {$data['nama_produk']} Berhasil Di Edit!");
         return redirect()->route('product.index');
     }
 
@@ -102,7 +103,7 @@ class ProductController extends Controller
     {
         $item = Product::findorFail($id);
         $item->delete();
-
+        session()->flash('pesan',"Data {$data['nama_produk']} Berhasil Di Hapus!");
         return redirect()->route('product.index');
     }
 }

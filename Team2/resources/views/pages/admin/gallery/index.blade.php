@@ -12,7 +12,12 @@
               <i class="fas fa-plus fa-sm text-white-50 mt-2"></i> Tambah Gallery
           </a>
       </div>
-
+        @if(session()->has('pesan'))
+            <div class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            {{ session()->get('pesan') }}
+            </div>
+        @endif
       <!-- Content Row -->
       <div class="row">
           <div class="card-body">

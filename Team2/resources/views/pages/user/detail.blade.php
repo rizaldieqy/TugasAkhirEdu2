@@ -34,8 +34,8 @@
     @endif
 </div>
 <div class="detail-gallery">
-    <h2 class="keterangan mb-3">Deskripsi produk {{ $item->nama_produk }}</h2>
-    {{ $item->deskripsi }}
+    <h2 class="d-flex justify-content-center mb-3 mt-3">Deskripsi produk {{ $item->nama_produk }}</h2>
+    <p class="text-justify">{{ $item->deskripsi }}</p> 
 </div>
 
 @endsection

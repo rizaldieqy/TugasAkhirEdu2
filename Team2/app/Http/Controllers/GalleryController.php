@@ -52,7 +52,7 @@ class GalleryController extends Controller
         );
 
         Gallery::create($data);
-        session()->flash('tambah',"Data {$data['nama_gambar']} Berhasil Disimpan!");
+        session()->flash('pesan',"Data {$data['nama_gambar']} Berhasil Disimpan!");
         return redirect()->route('gallery.index');
     }
 
@@ -105,7 +105,7 @@ class GalleryController extends Controller
         // $item = Gallery::findOrFail($id);
 
         $tampung->update($data);
-        session()->flash('edit',"Data {$data['nama_gambar']} Berhasil Di Edit!");
+        session()->flash('pesan',"Data {$data['nama_gambar']} Berhasil Di Edit!");
         return redirect()->route('gallery.index');
     }
 
@@ -119,7 +119,7 @@ class GalleryController extends Controller
     {
         $item = Gallery::findorFail($id);
         $item->delete();
-
+        session()->flash('pesan',"Data {$item['nama_gambar']} Berhasil Di Hapus!");
         return redirect()->route('gallery.index');
     }
 }
