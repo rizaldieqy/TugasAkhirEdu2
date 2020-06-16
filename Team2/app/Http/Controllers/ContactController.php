@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Users\Contact;
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ContactController extends Controller
 {
@@ -43,7 +44,7 @@ class ContactController extends Controller
     {
         $data = $request->all();
         Contact::create($data);
-        alert()->info('Title','Lorem Lorem Lorem');
+        Alert::success('Tanggapan Anda Berhasil disimpan!');
         return redirect('/contact');
     }
 
