@@ -18,6 +18,7 @@ class CreateAlamatsTable extends Migration
             $table->string('alamat');
             $table->string('no_hp');
             $table->string('email');
+            $table->string('location');
             $table->timestamps();
         });
     }

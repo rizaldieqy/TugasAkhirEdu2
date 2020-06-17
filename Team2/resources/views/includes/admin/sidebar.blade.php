@@ -62,6 +62,13 @@
                   <p>Contact</p>
                 </a>
               </li>
+              
+              <li class="nav-item">
+                <a href="{{ url('admin/alamat') }}" class="nav-link @yield('alamat')">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Alamat</p>
+                </a>
+              </li>
           
           
               

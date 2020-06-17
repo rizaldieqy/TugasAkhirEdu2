@@ -5,16 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Users\Contact;
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ContactController extends Controller
 {
-    public function __construct(Contact $contact){
+    public function __construct(){
         $this->middleware('auth')->only([
             'index','show','edit','update','destroy'
         ]);
-
-        $contact->get();
-        return view('includes.users.footer',compact('contact'));
     }
     /**
      * Display a listing of the resource.
@@ -46,6 +44,7 @@ class ContactController extends Controller
     {
         $data = $request->all();
         Contact::create($data);
+        Alert::success('Tanggapan Anda Berhasil disimpan!');
         return redirect('/contact');
     }
 
@@ -57,7 +56,7 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        // 
+        //  
     }
 
     /**
@@ -89,8 +88,9 @@ class ContactController extends Controller
      * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact)
+    public function destroy($id)
     {
-        //
+        Contact::destroy($id);
+        return redirect('/admin/contact')->with('hapus','Data Berhasil Dihapus!');
     }
 }
