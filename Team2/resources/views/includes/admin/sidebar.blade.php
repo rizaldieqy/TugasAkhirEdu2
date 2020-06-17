@@ -1,14 +1,10 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-<<<<<<< HEAD
+    {{-- <a href="index3.html" class="brand-link">
       <img src="{{ asset('AdminLTE/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-=======
-      <img src="{{asset ('AdminLTE/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
->>>>>>> ff4c77ee2f56faf18f02812c11d375f61d6afad4
            style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
-    </a>
+    </a> --}}
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -36,11 +32,7 @@
                 </a>
               </li>
               <li class="nav-item">
-<<<<<<< HEAD
-                <a href="#" class="nav-link">
-=======
                 <a href="/admin/product" class="nav-link @yield('Produk')">
->>>>>>> ff4c77ee2f56faf18f02812c11d375f61d6afad4
                   <i class="far fa-circle nav-icon"></i>
                   <p>Product</p>
                 </a>
