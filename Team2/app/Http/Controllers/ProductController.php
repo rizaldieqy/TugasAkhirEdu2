@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
+use App\Http\Requests\ProductRequest;
+use App\Models\Users\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -14,7 +16,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $items = Product::all();
+        return view('pages.admin.product.index',compact('items'));
     }
 
     /**
@@ -24,7 +27,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.admin.product.create');
     }
 
     /**
@@ -33,9 +36,16 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        //
+        $data = $request->all();
+
+        // slug adalah untuk membaca penganti id mempercantik url
+        $data['slug'] = Str::slug($request->nama_produk);
+
+        Product::create($data);
+        session()->flash('pesan',"Data {$data['nama_produk']} Berhasil Di Simpan!");
+        return redirect()->route('product.index');
     }
 
     /**
@@ -55,9 +65,13 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        //
+        $item = Product::findOrFail($id);
+
+        return view('pages.admin.product.edit',[
+            'item' => $item
+        ]);
     }
 
     /**
@@ -67,9 +81,16 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(ProductRequest $request, $id)
     {
-        //
+        $data = $request->all();
+        $data['slug'] = Str::slug($request->title);
+
+        $item = Product::findOrFail($id);
+
+        $item->update($data);
+        session()->flash('pesan',"Data {$data['nama_produk']} Berhasil Di Edit!");
+        return redirect()->route('product.index');
     }
 
     /**
@@ -78,8 +99,11 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        $item = Product::findorFail($id);
+        $item->delete();
+        session()->flash('pesan',"Data {$data['nama_produk']} Berhasil Di Hapus!");
+        return redirect()->route('product.index');
     }
 }

@@ -7,6 +7,7 @@ use App\Models\Users\Alamat;
 use View;
 
 
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -33,4 +34,5 @@ class AppServiceProvider extends ServiceProvider
             $data->with('contact',$contact);
         });
     }
+    
 }
