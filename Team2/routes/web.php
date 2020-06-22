@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/utamahome', 'UtamaFrontController@index')->name('utamahomes.index');
+Route::get('/', 'UtamaFrontController@index')->name('utamahomes.index');
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+// Route::get('/', 'HomeController@index')->name('home');
 // Route::prefix('admin')->group(function(){
 //     Route::resource('product','ProductController');
 //     Route::resource('gallery','GalleryController');
@@ -31,17 +31,17 @@ Route::get('/gallery','view_galleryController@index')->name('gallery');
 Route::get('/detail/{slug}','detailController@index')->name('detail');
 
 
-// Route::get('/utamas', 'UtamaController@index')->middleware('auth')->name('utamas.index');
+Route::get('/utamas', 'UtamaController@index')->middleware('auth')->name('utamas.index');
 
-// Route::get('/utamas/create', 'UtamaController@create')->middleware('auth')->name('utamas.create');
+Route::get('/utamas/create', 'UtamaController@create')->middleware('auth')->name('utamas.create');
 
-// Route::get('/utamas/{utama}/edit', 'UtamaController@edit')->middleware('auth')->name('utamas.edit');
+Route::get('/utamas/{utama}/edit', 'UtamaController@edit')->middleware('auth')->name('utamas.edit');
 
-// Route::patch('/utamas/{utama}', 'UtamaController@update')->middleware('auth')->name('utamas.update');
+Route::patch('/utamas/{utama}', 'UtamaController@update')->middleware('auth')->name('utamas.update');
 
-// Route::delete('/utamas/{utama}', 'UtamaController@destroy')->middleware('auth')->name('utamas.destroy');
+Route::delete('/utamas/{utama}', 'UtamaController@destroy')->middleware('auth')->name('utamas.destroy');
 
-// Route::post('/utamas', 'UtamaController@store')->middleware('auth')->name('utama.store');
+Route::post('/utamas', 'UtamaController@store')->middleware('auth')->name('utama.store');
 // Contact Us 
 
 // Users Route

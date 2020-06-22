@@ -1,9 +1,9 @@
 @extends('layouts.masteradmin')
-@section('title', 'Admin')
 @section('dataUtama','active')
-@section('content')
+@section('contentadmin')
 
-<div class="content-header">
+<div class="container">
+  <div class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
@@ -63,5 +63,7 @@
         @endforeach
     </tbody>
 </table>
+</div>
+
 
 @endsection

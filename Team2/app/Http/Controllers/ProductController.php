@@ -103,7 +103,7 @@ class ProductController extends Controller
     {
         $item = Product::findorFail($id);
         $item->delete();
-        session()->flash('pesan',"Data {$data['nama_produk']} Berhasil Di Hapus!");
+        session()->flash('pesan',"Data {$item['nama_produk']} Berhasil Di Hapus!");
         return redirect()->route('product.index');
     }
 }

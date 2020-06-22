@@ -16,9 +16,9 @@
                   <br>
                   @foreach ($utamaf as $muncul)
                   <div class="carousel-item active text-center mt-5" style="color: white">
-                      <h1>{{ $muncul->title }}</h1>
+                      <h1 style="font-size: {{ $muncul->size_font_title }}px;">{{ $muncul->title }}</h1>
                       <br>
-                      <h3>{{ $muncul->subtitle }}</h3>
+                      <h3 style="font-size: {{ $muncul->size_font_subtitle }}px;">{{ $muncul->subtitle }}</h3>
                   </div>
                   @endforeach
                 </div>
@@ -67,7 +67,7 @@
                   <div class="carousel-item active text-center mt-5" style="color: white">
                       <h1><b> Lihat Produk Kami </b></h1>
                       <br>
-                      <a href="#" class="btn btn-outline-light">Lihat</a>
+                      <a href="{{ url('/product') }}" class="btn btn-outline-light">Lihat</a>
                   </div>
                 </div>
               </div>

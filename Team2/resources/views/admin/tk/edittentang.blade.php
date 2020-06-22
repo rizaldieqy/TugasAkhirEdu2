@@ -1,7 +1,6 @@
 @extends('layouts.masteradmin')
-@section('title', 'Admin Edit')
 @section('dataUtama','active')
-@section('content')
+@section('contentadmin')
 
 
 <div class="container">

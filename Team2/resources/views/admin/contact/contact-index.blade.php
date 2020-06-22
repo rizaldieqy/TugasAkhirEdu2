@@ -1,5 +1,5 @@
 @extends('layouts.masteradmin')
-@section('product','active')
+@section('contact','active')
 @section('contentadmin')
 
 {{-- <div class="content-wrapper"> --}}

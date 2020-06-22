@@ -26,12 +26,15 @@
   <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/summernote/summernote-bs4.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="{{ asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700') }}" rel="stylesheet">
+  <link rel="stylesheet" href={{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css') }}>
+  <link rel="stylesheet" href="{{ asset('cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css') }}">
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
  <div>
-  <ul class="navbar-nav ml-auto">
+  {{-- <ul class="navbar-nav ml-auto">
     <!-- Authentication Links -->
     @guest
         <li class="nav-item">
@@ -61,7 +64,7 @@
             </div>
         </li>
     @endguest
-</ul>
+</ul> --}}
  </div>
   <!-- Navbar -->
   @include('includes.admin.header')
@@ -132,6 +135,14 @@
 <script src="{{ asset('AdminLTE/dist/js/pages/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('AdminLTE/dist/js/demo.js') }}"></script>
+
+<script src="{{ asset('cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js') }}"></script>
+
+<script>
+  $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
 @include('sweetalert::alert')
 </body>
 </html>
