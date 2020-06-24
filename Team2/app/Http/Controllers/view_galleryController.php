@@ -13,7 +13,7 @@ class view_galleryController extends Controller
 
         $items = Product::with(['galleries'])->get();
         
-        return view('pages.user.gallery',[
+        return view('user.product.gallery',[
             'items' => $items,
         ]);
     }

@@ -15,7 +15,7 @@ class UtamaFrontController extends Controller
     public function index()
     {
         $utamaf = Utama::take(3)->get();
-        return view('utama', compact('utamaf'));
+        return view('user.home.utama', compact('utamaf'));
 
     //     $employeedata = DB::table('employees')->get();
 

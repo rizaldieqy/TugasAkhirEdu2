@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col-sm-3">
           <br><br>
-          <h3><i class='fas fa-globe-asia' style='font-size:60px;color:white'></i></h3><br>
+          <h3><i class='fas fa-globe-asia' style='font-size:200px;color:white'></i></h3><br>
         </div>
         <div class="col-sm-3" style="color: white">
           <br><br>

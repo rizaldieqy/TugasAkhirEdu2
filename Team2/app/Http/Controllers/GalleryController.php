@@ -20,7 +20,7 @@ class GalleryController extends Controller
     {
         $items = Gallery::with(['data'])->get();
         // dd($items);
-        return view('pages.admin.gallery.index',[
+        return view('admin.pa.gallery.index',[
             'items' => $items,
         ]);
     }
@@ -33,7 +33,7 @@ class GalleryController extends Controller
     public function create()
     {
         $product = Product::all();
-        return view('pages.admin.gallery.create',[
+        return view('admin.pa.gallery.create',[
             'product' => $product
         ]);
     }

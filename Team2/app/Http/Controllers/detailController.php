@@ -10,7 +10,7 @@ class detailController extends Controller
     public function index(Request $request, $slug)
     {
         $item = Product::with(['galleries'])->where('slug', $slug)->firstOrFail();
-        return view('pages.user.detail',[
+        return view('user.product.detail',[
             'item' => $item
         ]);
     }

@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-sm-12">
             <hr>
-            <form action="{{ route('utama.store') }}" method="POST">
+            <form action="{{ route('utamas.store') }}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label for="title">Title</label>

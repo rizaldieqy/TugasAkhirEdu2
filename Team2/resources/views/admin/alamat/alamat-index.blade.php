@@ -2,7 +2,7 @@
 @section('alamat','active')
 @section('contentadmin')
 
-<div class="content-wrapper">
+{{-- <div class="content-wrapper"> --}}
     <section class="content">
         <div class="container">
             <div class="row">
@@ -37,6 +37,6 @@
             </div>
         </div>
     </section>
-</div>
+{{-- </div> --}}
 
 @endsection

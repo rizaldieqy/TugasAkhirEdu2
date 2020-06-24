@@ -36,14 +36,14 @@
                       @forelse($items as $item)
                           <tr>
                               <td>{{ $loop->iteration }}</td>
-                              <td>{{ $item->nama_produk }}</td>
+                              <td>{{ $item->data->nama_produk }}</td>
                               <td>{{ $item->nama_gambar }}</td>
                               <td>
                                   <img src="{{ Storage::url($item->gambar) }}" alt="" style="width: 200px" class="img-thumbnail">
                               </td>
                               <td>
                                   <a href="{{ route('gallery.edit', $item->id) }}" class="btn btn-info">
-                                      <i class="fa fa-pencil-alt"></i>
+                                      <i class="fas fa-edit"></i>
                                   </a>
                                   <form action="{{ route('gallery.destroy', $item->id) }}" method="post" class="d-inline">
                                       @csrf

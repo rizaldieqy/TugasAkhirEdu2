@@ -38,7 +38,7 @@
                                   <td>{{ $item->type }}</td>
                                   <td>
                                       <a href="{{ route('product.edit', $item->id) }}" class="btn btn-info">
-                                          <i class="fa fa-pencil-alt"></i>
+                                          <i class="fas fa-edit"></i>
                                       </a>
                                       <form action="{{ route('product.destroy', $item->id) }}" method="post" class="d-inline">
                                           @csrf
